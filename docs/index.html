@@ -13,39 +13,67 @@
           <a class="navbar-brand" href="#">SetUpShortCut</a>
         </div>
     </nav>
-    <div class="container">
-        <div class="row m-5">
-            <div class="card m-2" style="width: 18rem;">
-                <img src="./img/office.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Microsoft Office</h5>
-                    <a href="https://www.office.com/" class="btn btn-primary">
-                        <img src="./img/MainDownload.png" class="img-fluid me-2" alt="..." style="max-width: 24px; height: auto;">
-                        Download
-                    </a>
-                </div>
-            </div>
-            <div class="card m-2" style="width: 18rem;">
-                <img src="./img/MicrosoftTeams.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Microsoft Teams</h5>
-                    <a href="https://www.microsoft.com/ja-jp/microsoft-teams/download-app" class="btn btn-primary">
-                        <img src="./img/MainDownload.png" class="img-fluid me-2" alt="..." style="max-width: 24px; height: auto;">
-                        Download
-                    </a>
-                </div>
-            </div>
-            <div class="card m-2" style="width: 18rem;">
-                <img src="./img/VirusBuster.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Trend Micro Apex One</h5>
-                    <a href="http://smd.nit.ac.jp/s_kan/vb/about_vb.html" class="btn btn-primary">
-                        <img src="./img/MainDownload.png" class="img-fluid me-2" alt="..." style="max-width: 24px; height: auto;">
-                        Download
-                    </a>
-                </div>
-            </div>
-        </div>
+    <div id="main" class="container">
     </div>
+    <script>
+        const container = document.getElementById('main');
+
+        fetch('./resource/linkindex.json')
+        .then(response => {
+            return response.json()
+        }
+        )
+        .then(linkDict => renderRow(linkDict));
+
+        function renderCard(icon, title, url){
+            const colDivElement = document.createElement('div');
+            colDivElement.setAttribute('class', 'col-md-3');
+
+            const cardHTML = `
+                <div class="card m-2" style="width: 18rem;">
+                    <img src="${icon}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">${title}</h5>
+                        <a href="${url}" class="btn btn-primary">
+                            <img src="./img/MainDownload.png" class="img-fluid me-2" alt="..." style="max-width: 24px; height: auto;">
+                            Download
+                        </a>
+                    </div>
+                </div>
+            `;
+            colDivElement.innerHTML = cardHTML;
+            return colDivElement
+        }
+
+        function renderMainTitle(title){
+            const colElement = document.createElement('div');
+            colElement.setAttribute('class', 'col-md-12 ms-2');
+
+            const titleElement = document.createElement('h3');
+            titleElement.textContent = title;
+
+            colElement.appendChild(titleElement);
+
+            return colElement
+        }
+
+        function renderRow(linkDict){
+            for(let linkItem of linkDict){
+                const rowElement = document.createElement('div');
+                rowElement.setAttribute('class', 'row m-5');
+
+                const titleElement = renderMainTitle(linkItem.mainTitle);
+                rowElement.appendChild(titleElement);
+
+                for(let link of linkItem.links){
+                    const cardElement = renderCard(link.icon, link.title, link.url);
+                    rowElement.appendChild(cardElement);
+                }
+
+                container.appendChild(rowElement);
+            }
+        }
+        
+    </script>
 </body>
 </html>

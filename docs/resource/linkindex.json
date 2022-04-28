@@ -1,0 +1,22 @@
+[
+    {
+        "mainTitle": "General",
+        "links": [
+            {
+                "title": "Microsoft Office",
+                "icon": "./img/office.png",
+                "url": "https://www.office.com/"
+            },
+            {
+                "title": "Microsoft Teams",
+                "icon": "./img/MicrosoftTeams.png",
+                "url": "https://www.microsoft.com/ja-jp/microsoft-teams/download-app"
+            },
+            {
+                "title": "Trend Micro Apex One",
+                "icon": "./img/VirusBuster.png",
+                "url": "http://smd.nit.ac.jp/s_kan/vb/about_vb.html"
+            }
+        ]
+    }
+]
