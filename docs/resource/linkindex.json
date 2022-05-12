@@ -18,5 +18,15 @@
                 "url": "http://smd.nit.ac.jp/s_kan/vb/about_vb.html"
             }
         ]
+    },
+    {
+        "mainTitle": "Information Media",
+        "links" : [
+            {
+                "title": "Microsoft Visual Studio",
+                "icon": "./img/VisualStudio.png",
+                "url": "https://visualstudio.microsoft.com/ja/free-developer-offers/"
+            }
+        ]
     }
 ]
