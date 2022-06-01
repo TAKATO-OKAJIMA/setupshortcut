@@ -31,7 +31,9 @@
 
             const cardHTML = `
                 <div class="card m-2">
-                    <img src="${icon}" class="card-img-top" alt="...">
+                    <a href="${url}">
+                        <img src="${icon}" class="card-img-top" alt="${title}">
+                    </a>
                     <div class="card-body">
                         <h5 class="card-title">${title}</h5>
                         <a href="${url}" class="btn btn-primary">
