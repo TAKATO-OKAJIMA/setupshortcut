@@ -26,6 +26,16 @@
                 "title": "Microsoft Visual Studio",
                 "icon": "./img/VisualStudio.png",
                 "url": "https://visualstudio.microsoft.com/ja/free-developer-offers/"
+            },
+            {
+                "title": "VSCode",
+                "icon": "./img/VSCode.png",
+                "url": "https://code.visualstudio.com/download"
+            },
+            {
+                "title": "Anaconda",
+                "icon": "./img/Anaconda.png",
+                "url": "https://www.anaconda.com/products/distribution"
             }
         ]
     }
