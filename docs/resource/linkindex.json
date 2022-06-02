@@ -16,6 +16,11 @@
                 "title": "Trend Micro Apex One",
                 "icon": "./img/VirusBuster.png",
                 "url": "http://smd.nit.ac.jp/s_kan/vb/about_vb.html"
+            },
+            {
+                "title": "Lentrance Reader",
+                "icon": "./img/LentranceReader.png",
+                "url": "https://dtext.tokyo-shoseki.co.jp/dtextwebWP/lentrance-reader"
             }
         ]
     },
